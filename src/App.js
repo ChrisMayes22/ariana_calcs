@@ -34,6 +34,7 @@ function App() {
         <div>
           DAYS CALCULATED: {days}
         </div>
+        <br/>
         <form name="insanityForm" onSubmit={(e) => submitHandler(e)}>
           <div>
               <label>What does Ariana do on day {days}?</label>
