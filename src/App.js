@@ -22,16 +22,6 @@ function App() {
       setDays(days + 1);
   }
 
-  function dayHandler(e) {
-    console.log(e.target.value);
-    const days = []
-    for(let i = 0; i < parseInt(e.target.value); i++){
-      days.push(0);
-    }
-    setDays(days);
-    console.log(days);
-  }
-
   return (
     <div className="App">
       <div className="container">
@@ -44,8 +34,6 @@ function App() {
         <div>
           DAYS CALCULATED: {days}
         </div>
-        <div>How many Days to Calculate?</div>
-        <input type="number" defaultValue="1" onChange={(e) => dayHandler(e)}/>
         <form name="insanityForm" onSubmit={(e) => submitHandler(e)}>
           <div>
               <label>What does Ariana do on day {days}?</label>
