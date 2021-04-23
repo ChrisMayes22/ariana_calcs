@@ -2,11 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5vh;
   text-align: center;
   background: linear-gradient(rgba(56, 54, 155, 0.5),rgba(56, 54, 155, 0.5)), url('./images/witchy.jpg');
   color: #020887;
-  height: 90vh;
+  height: 100vh;
 }
 
 .input_container{
@@ -22,7 +21,7 @@ label {
 .container {
   background-color: #A9DBB8;
   width: 40vw;
-  height: 80vh;
+  height: 90vh;
   padding: 2rem;
 }
 
@@ -47,7 +46,7 @@ label {
   background-color: #7CA5B8;
   color: #020887;
   border: 1px solid #020887;
-  padding: 1rem;
+  padding: 0.7rem;
   font-size: large;
 }
 
@@ -56,5 +55,23 @@ label {
 }
 
 .submit_button{
+  background-color: rgb(56, 54, 155);
+  color: #C6EBBE;
+  margin: 1rem;
+  border-radius: 26%;
+  font-weight: bold;
+  width: 45%;
+  border: none;
+  padding: 1rem;
+}
 
+.submit_button:hover{
+  background-color: #C6EBBE;
+  border: solid 2px rgb(56, 54, 155);
+  color: rgb(56, 54, 155);
+}
+
+.submit_button:active{
+  background-image: url('./images/witchy.jpg');
+  color: transparent;
 }
