@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ariana_calcs/static/css/main.465fa84a.chunk.css",
+    "main.css": "/ariana_calcs/static/css/main.92dab084.chunk.css",
     "main.js": "/ariana_calcs/static/js/main.71923a7f.chunk.js",
     "main.js.map": "/ariana_calcs/static/js/main.71923a7f.chunk.js.map",
     "runtime-main.js": "/ariana_calcs/static/js/runtime-main.5c6e53af.js",
@@ -10,14 +10,14 @@
     "static/js/3.081b48bf.chunk.js": "/ariana_calcs/static/js/3.081b48bf.chunk.js",
     "static/js/3.081b48bf.chunk.js.map": "/ariana_calcs/static/js/3.081b48bf.chunk.js.map",
     "index.html": "/ariana_calcs/index.html",
-    "static/css/main.465fa84a.chunk.css.map": "/ariana_calcs/static/css/main.465fa84a.chunk.css.map",
+    "static/css/main.92dab084.chunk.css.map": "/ariana_calcs/static/css/main.92dab084.chunk.css.map",
     "static/js/2.8aec6771.chunk.js.LICENSE.txt": "/ariana_calcs/static/js/2.8aec6771.chunk.js.LICENSE.txt",
     "static/media/App.css": "/ariana_calcs/static/media/witchy.85511a33.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.5c6e53af.js",
     "static/js/2.8aec6771.chunk.js",
-    "static/css/main.465fa84a.chunk.css",
+    "static/css/main.92dab084.chunk.css",
     "static/js/main.71923a7f.chunk.js"
   ]
 }
