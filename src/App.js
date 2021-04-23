@@ -12,8 +12,7 @@ function App() {
   const [arianaActivity, setArianaActivity] = useState("none");
   const [quelaniKills, setQuelaniKills] = useState("0");
 
-  function submitHandler(e){
-      e.preventDefault();
+  function submitHandler(){
       const sing = arianaActivity === "sing" ? true : false;
       const draw = arianaActivity === "draw" ? true : false;
       const [tmpAriana, tmpQuelani] = updateInsanities(ariana, quelani, sing, draw, quelaniKills);
@@ -22,81 +21,74 @@ function App() {
       setDays(days + 1);
   }
 
+  function arianaHandler(e){
+      setAriana(parseInt(e.target.value))
+  }
+
+  function quelaniHandler(e){
+      setQuelani(parseInt(e.target.value))
+  }
+
   return (
     <div className="App">
       <div className="container">
         <div>
-          ARIANA: {ariana}
+          <div className={"character_label"}><h2>ARIANA: {ariana}</h2></div>
+          <br/>
+          MANUAL CHANGE: <input type="test" defaultValue={ariana} onChange={(e) => arianaHandler(e)}/>
         </div>
         <div>
-          QUELANI: {quelani}
+          <div className={"character_label"}><h2>QUELANI: {quelani}</h2></div>
+          <br/>
+          MANUAL CHANGE: <input type="test" defaultValue={quelani} onChange={(e) => quelaniHandler(e)}/>
         </div>
+        <br/>
         <div>
           DAYS CALCULATED: {days}
         </div>
         <br/>
-        <form name="insanityForm" onSubmit={(e) => submitHandler(e)}>
+        <section>
           <div>
-              <label>What does Ariana do on day {days}?</label>
-              <div className={"input_container"}>
-                  <input onClick = {() => setArianaActivity("sing")}
-                      type="radio"
-                      name={`ariana`}
-                      key={`r_sing-`}
-                      id={`r_sing-`}
-                      value="sing"/>
-                  <label htmlFor={`r_sing-`} children="sing"/>
-              </div>
-              <div className={"input_container"}>
-                  <input onClick = {() => setArianaActivity("draw")}
-                      type="radio"
-                      name={`ariana`}
-                      key={`r_draw-`}
-                      id={`r_draw-`}
-                      value="draw"/>
-                  <label htmlFor={`r_draw-`} children="draw"/>
-              </div>
-              <div className={"input_container"}>
-                  <input onClick = {() => setArianaActivity("none")}
-                      type="radio"
-                      name={`ariana`}
-                      key={`r_none-`}
-                      id={`r_none-`}
-                      value="none"/>
-                  <label htmlFor={`r_none-`} children="none"/>
+              <h4>What does Ariana do on day {days}?</h4>
+              <div className="flex_container">
+                <button 
+                  className={["b_activity-choice", arianaActivity === "sing" ? " selected" : ""].join('')} 
+                  onClick = {() => setArianaActivity("sing")} 
+                  children="sing"/>
+                <button 
+                  className={["b_activity-choice", arianaActivity === "draw" ? " selected" : ""].join('')} 
+                  onClick = {() => setArianaActivity("draw")} 
+                  children="draw"/>
+                <button 
+                  className={["b_activity-choice", arianaActivity === "none" ? " selected" : ""].join('')} 
+                  onClick = {() => setArianaActivity("none")} 
+                  children="none"/>
               </div>
 
-              <label>How many killing blows does Quelani land on day {days}?</label>
-              <div className={"input_container"}>
-                  <input onClick = {() => setQuelaniKills("0")} 
-                      type="radio"
-                      name={`quelani`}
-                      key={`r_no-kills-`}
-                      id={`r_no-kills-`}
-                      value="0-1"/>
-                  <label htmlFor={`r_no-kills-`} children="0-1"/>
-              </div>
-              <div className={"input_container"}>
-                  <input onClick = {() => setQuelaniKills("2")}
-                      type="radio"
-                      name={`quelani`}
-                      key={`r_two-kills-`}
-                      id={`r_two-kills-`}
-                      value="2"/>
-                  <label htmlFor={`r_two-kills-`} children="2"/>
-              </div>
-              <div className={"input_container"}>
-                  <input onClick = {() => setQuelaniKills("3")}
-                      type="radio"
-                      name={`quelani`}
-                      key={`r_three-kills-`}
-                      id={`r_three-kills-`}
-                      value="3+"/>
-                  <label htmlFor={`r_three-kills-`} children="3+"/>
+              <br/>
+              <br/>
+              <h4>How many killing blows does Quelani land on day {days}?</h4>
+              <div className="flex_container">
+                <button 
+                  className={["b_activity-choice", quelaniKills === "0" ? " selected" : ""].join('')} 
+                  onClick = {() => setQuelaniKills("0")} 
+                  children="0"/>
+                <button 
+                  className={["b_activity-choice", quelaniKills === "1" ? " selected" : ""].join('')} 
+                  onClick = {() => setQuelaniKills("1")} 
+                  children="1"/>
+                <button 
+                  className={["b_activity-choice", quelaniKills === "2" ? " selected" : ""].join('')} 
+                  onClick = {() => setQuelaniKills("2")} 
+                  children="2"/>
+                <button 
+                  className={["b_activity-choice", quelaniKills === "3" ? " selected" : ""].join('')} 
+                  onClick = {() => setQuelaniKills("3+")} 
+                  children="3"/>
               </div>
           </div>
-          <input type="submit"/>
-        </form>
+          <button children="submit" class="submit_button" onClick={() => submitHandler()}/>
+        </section>
       </div>
     </div>
   );
